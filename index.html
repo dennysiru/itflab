@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initital-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initital-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>My Username's Book</h1>
+      <h1 id="usernamePreview">My Username's Book</h1>
 
-        <div class="profile-section">
-            <img id="profileImage" src="https://th.bing.com/th/id/R.8bb4593524c8f2d1be01ad81bcb5f5c9?rik=ZB6TAN7XaLT%2f9Q&riu=http%3a%2f%2fimages2.wikia.nocookie.net%2f__cb20121016061618%2fmagickaitokid%2fes%2fimages%2f4%2f48%2fKaito_Kid_Kuroba_Kaito.jpg&ehk=cbluE%2fFLC0vefHDMKou8%2fdeMANnNGUjJlelUTX4tjtU%3d&risl=&pid=ImgRaw&r=0" alt="Profile Image">
-            <div class="profile-setting">
-                <div class="input-group">
-                <label>Set the Username</label>
-                <input type="text" id="userInput" placeholder="Enter Username">
-                <button id="setUsernameBtn">SET</button>
-            </div>
-            <div class="input-group">
-                <label>Set the Profile Image URL</label>
-                <input type="text" id="imageInput" placeholder="Enter Image URL">
-                <button id="setImagebtn">SET</button>
-            </div>
+      <div class="profile-section">
+        <img
+          id="profilePreview"
+          name="profilePreview"
+          src="https://th.bing.com/th/id/R.8bb4593524c8f2d1be01ad81bcb5f5c9?rik=ZB6TAN7XaLT%2f9Q&riu=http%3a%2f%2fimages2.wikia.nocookie.net%2f__cb20121016061618%2fmagickaitokid%2fes%2fimages%2f4%2f48%2fKaito_Kid_Kuroba_Kaito.jpg&ehk=cbluE%2fFLC0vefHDMKou8%2fdeMANnNGUjJlelUTX4tjtU%3d&risl=&pid=ImgRaw&r=0"
+        />
+        
+        <div class="profile-setting">
+          <div class="input-group">
+            <label>Set the Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter Username"
+            />
+            <button onclick="setUsername()">SET</button>
+          </div>
+
+          <div class="input-group">
+            <label>Set the Profile Image URL</label>
+            <input type="text" id="profile" name="profile" placeholder="Enter Image URL" />
+            <button onclick="setProfile()">SET</button>
+          </div>
         </div>
-    </div>
-    <h2>Phone Number List</h2>
+      </div>
 
-    <div class="input-section">
-        <input type="text" id="nameInput" placeholder="Name">
-        <input type="text" id="phoneInput" placeholder="Tel">
-        <button id="addPhoneBtn">ADD</button>
+      <h2>Phone Number List</h2>
+      <div class="input-section">
+        <input type="text" id="name" name="name" placeholder="Name" />
+        <input type="text" id="phone" name="phone" placeholder="Tel" />
+        <button onclick="addPhoneNumber()">ADD</button>
         <button id="exportBtn">EXPORT</button>
-    </div>
-        <table id="PhoneTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Hello World</td>
-                    <td>111-111-1111</td>
-                </tr>
-            </tbody>
-        </table>
+      </div>
+      
+      <table id="phoneTable" name="phoneTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Hello World</td>
+            <td>111-111-1111</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

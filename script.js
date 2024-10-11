@@ -1,36 +1,52 @@
-document.getElementById('setUsernameBtn').addEventListener('click', function() {
-    let username = document.getElementById('userInput').value;
-    if (username) {
-        document.title = `${username}'s Phone Book`;
-        alert('Username set to: ' + username);
-    }
-});
+function setUsername() {
+  // Check Empty Fields
+  const username = document.getElementById("username").value;
+  const usernamePreview = document.getElementById("usernamePreview");
 
-document.getElementById('setImagebtn').addEventListener('click', function() {
-    let imageUrl = document.getElementById('imageInput').value;
-    if (imageUrl) {
-        document.getElementById('proflieImage').src = imageUrl;
-        alert('Profile Image Updated')
-    }
-});
+  // Check Empty Fields
+  if (username !== "") {
+    usernamePreview.textContent = username;
+    return;
+  }
 
-document.getElementById('addPhoneBtn').addEventListener('click', function() {
-    let name = document.getElementById('nameInput').value;
-    let phone = document.getElementById('phoneInput').value;
+  // Error message
+  alert("Please enter a username");
+}
 
-    if (name && phone) {
-        let table = document.getElementById('phoneTable').getElementsByTagName('tbody')[0];
-        let row = table.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
+function setProfile() {
+  // Check Empty Fields
+  const profile = document.getElementById("profile").value;
+  const profilePreview = document.getElementById("profilePreview");
 
-        let rowCount = table.row.length;
-        cell1.innerHTML = rowCount;
-        cell2.innerHTML = name;
-        cell3.innerHTML = phone;
+  // Check Empty Fields
+  if (profile !== "") {
+    profilePreview.src = profile;
+    //Clear the input field
+    profile.value = "";
+    return;
+  }
+  // Error message
+  alert("Please enter a profile picture");
+}
 
-        document.getElementById('nameInput').value = '';
-        document.getElementById('phoneInput').value = '';
-        }
-});
+let i = 1;
+function addPhoneNumber() {
+  // Check Empty Fields
+  const name = document.getElementById("name");
+  const phone = document.getElementById("phone");
+
+  // Check Empty Fields
+  if (name.value && phone.value) {
+    // Get Table
+    const row = document.getElementById("phoneTable").insertRow();
+    // Insert new cells
+    [++i, name.value, phone.value].forEach(
+      (text) => (row.insertCell().textContent = text)
+    );
+    // Clear input fields
+    name.value = phone.value = "";
+  } else {
+    // Error message
+    alert("Please enter both name and phone number");
+  }
+}
