@@ -1,11 +1,12 @@
-document.getElementById('SetUsernameBtn').addEventListener('click', function() {
+document.getElementById('setUsernameBtn').addEventListener('click', function() {
     let username = document.getElementById('userInput').value;
     if (username) {
+        document.title = `${username}'s Phone Book`;
         alert('Username set to: ' + username);
     }
 });
 
-document.getElementById('setIamgebtn').addEventListener('click', function() {
+document.getElementById('setImagebtn').addEventListener('click', function() {
     let imageUrl = document.getElementById('imageInput').value;
     if (imageUrl) {
         document.getElementById('proflieImage').src = imageUrl;
@@ -18,7 +19,7 @@ document.getElementById('addPhoneBtn').addEventListener('click', function() {
     let phone = document.getElementById('phoneInput').value;
 
     if (name && phone) {
-        let table = document.getElementById('phoneTable').getElementsByTagName('tboday')[0];
+        let table = document.getElementById('phoneTable').getElementsByTagName('tbody')[0];
         let row = table.insertRow();
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
